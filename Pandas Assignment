@@ -1,0 +1,195 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled4.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyPCt9ufI3UCY1Vb+EMB45ye",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/manojpkumar/DSC-Assignment2/blob/main/Pandas%20Assignment\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Hfm6NmaxB_d4"
+      },
+      "source": [
+        "# Import pandas\n",
+        "import pandas as pd"
+      ],
+      "execution_count": 1,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "v8XidCq6CGWv",
+        "outputId": "99f59872-4184-4771-cdc9-3f14cf5c7238",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 221
+        }
+      },
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "fruits = np.array([\"banana\", \"cherry\", \"strawberry\",\" mango\", \"pineapple\"]) \n",
+        "# Create a series of fruits(string) of length 5 and view it\n",
+        "fruits = pd.Series(fruits) \n",
+        "print(fruits)\n",
+        "# Create a series of prices(int) of length 5 and view it\n",
+        "prices = np.array([20,70,50,50,60]) \n",
+        "prices = pd.Series(prices)\n",
+        "print(prices)"
+      ],
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "0        banana\n",
+            "1        cherry\n",
+            "2    strawberry\n",
+            "3         mango\n",
+            "4     pineapple\n",
+            "dtype: object\n",
+            "0    20\n",
+            "1    70\n",
+            "2    50\n",
+            "3    50\n",
+            "4    60\n",
+            "dtype: int64\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "NOS75fhNCM_R",
+        "outputId": "1997c577-acc6-40a5-b381-adcb70527baa",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 119
+        }
+      },
+      "source": [
+        "# Create a fruit_prices dataframe out of the 2 series you just made and view it\n",
+        "data = {'Fruits':fruits, 'Price':prices} \n",
+        "fruit_prices =pd.DataFrame(data )\n",
+        "\n",
+        "print(fruit_prices)"
+      ],
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "       Fruits  Price\n",
+            "0      banana     20\n",
+            "1      cherry     70\n",
+            "2  strawberry     50\n",
+            "3       mango     50\n",
+            "4   pineapple     60\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "6F0zw5BaCQqh",
+        "outputId": "264d43ca-7787-4f21-d55f-b83a88491a2f",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 340
+        }
+      },
+      "source": [
+        "# Find the mean, sum, standard deviation, variance of the prices\n",
+        "print(\"\\n********* Calculated mean********\\n\")\n",
+        "print(fruit_prices.mean())\n",
+        " \n",
+        "print(\"\\n----------- Calculated Median -----------\\n\")\n",
+        "print(fruit_prices.median())\n",
+        " \n",
+        "print(\"\\n******** Calculated Mode *********\\n\")\n",
+        "print(fruit_prices.mode())"
+      ],
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "\n",
+            "********* Calculated mean********\n",
+            "\n",
+            "Price    50.0\n",
+            "dtype: float64\n",
+            "\n",
+            "----------- Calculated Median -----------\n",
+            "\n",
+            "Price    50.0\n",
+            "dtype: float64\n",
+            "\n",
+            "******** Calculated Mode *********\n",
+            "\n",
+            "       Fruits  Price\n",
+            "0       mango   50.0\n",
+            "1      banana    NaN\n",
+            "2      cherry    NaN\n",
+            "3   pineapple    NaN\n",
+            "4  strawberry    NaN\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "nxwmQLXICT9a",
+        "outputId": "73fc49a5-3a10-4e35-d32b-c7af98f8e51d",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        }
+      },
+      "source": [
+        "import os\n",
+        "print(os.getcwd())\n",
+        "\n",
+        "print(os.listdir(os.getcwd()))"
+      ],
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "/content\n",
+            "['.config', 'sample_data']\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    }
+  ]
+}
