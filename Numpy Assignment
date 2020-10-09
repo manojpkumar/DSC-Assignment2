@@ -1,0 +1,1106 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "name": "Untitled4.ipynb",
+      "provenance": [],
+      "authorship_tag": "ABX9TyOGPzk3Ry0zwriXB3ll2ExR",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/manojpkumar/DSC-Assignment2/blob/main/Numpy%20Assignment\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "4lozKzrA7DDQ"
+      },
+      "source": [
+        "# Import NumPy as its abbreviation 'np'\n",
+        "import numpy as np"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Oh_bkDwZ7Enb",
+        "outputId": "001fe1b6-5bdb-4115-f5a2-3d7fc2d69083",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 85
+        }
+      },
+      "source": [
+        "\n",
+        "# Create a 1-dimensional NumPy array using np.array()\n",
+        "x1 = np.random.randint(20, size=6)  \n",
+        "x2 = np.random.randint(10, size=(3, 4)) \n",
+        "print(x1)\n",
+        "print(x2)\n",
+        "\n",
+        "# Create a 2-dimensional NumPy array using np.array()"
+      ],
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[ 2 15  4  2  6  1]\n",
+            "[[4 7 1 7]\n",
+            " [9 3 1 3]\n",
+            " [3 0 4 5]]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "yFBWjQCF7Kjr",
+        "outputId": "4c180747-c506-4d2e-84d3-c196356be3e3",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "\n",
+        "# Attributes of 1-dimensional array (shape, number of dimensions, data type, size and type)\n",
+        "print(\"shape :\",x1.shape,\"     \" ,\"number of dimension:\",x1.ndim ,\"    \",\"data type :\",x1.dtype,\"      \",\"size:\",x1.size )"
+      ],
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "shape : (6,)       number of dimension: 1      data type : int64        size: 6\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "mEIb1OdX7T3X",
+        "outputId": "6d45bb19-deec-4f92-d957-df5f9f96b2fe",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "# Attributes of 2-dimensional array\n",
+        "print(\"shape :\",x2.shape,\"     \" ,\"number of dimension:\",x2.ndim ,\"    \",\"data type :\",x2.dtype,\"      \",\"size:\",x2.size )"
+      ],
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "shape : (3, 4)       number of dimension: 2      data type : int64        size: 12\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "aYtoxYYP7Zx9",
+        "outputId": "30953d6e-77fd-408e-a804-18c74161f9d2",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 102
+        }
+      },
+      "source": [
+        "# Create an array of shape (5, 5) with only ones\n",
+        "np.ones([ 5,5])"
+      ],
+      "execution_count": 9,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[1., 1., 1., 1., 1.],\n",
+              "       [1., 1., 1., 1., 1.],\n",
+              "       [1., 1., 1., 1., 1.],\n",
+              "       [1., 1., 1., 1., 1.],\n",
+              "       [1., 1., 1., 1., 1.]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 9
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "LS24oCtB7bjL",
+        "outputId": "367225f3-5835-4fee-9a87-c999feb5cb82",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 204
+        }
+      },
+      "source": [
+        "# Create an array of shape (3, 3, 5) with only zeros\n",
+        "np.zeros([3,3,5] ,dtype=int)"
+      ],
+      "execution_count": 10,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[[0, 0, 0, 0, 0],\n",
+              "        [0, 0, 0, 0, 0],\n",
+              "        [0, 0, 0, 0, 0]],\n",
+              "\n",
+              "       [[0, 0, 0, 0, 0],\n",
+              "        [0, 0, 0, 0, 0],\n",
+              "        [0, 0, 0, 0, 0]],\n",
+              "\n",
+              "       [[0, 0, 0, 0, 0],\n",
+              "        [0, 0, 0, 0, 0],\n",
+              "        [0, 0, 0, 0, 0]]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 10
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "QbZXv0ez7fLk",
+        "outputId": "5dbf58e2-974d-477d-d2c4-c692fe968a96",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 136
+        }
+      },
+      "source": [
+        "# Create a random array with numbers between 0 and 10 of size (7, 2)\n",
+        "np.random.randint(10,size=(7,2))"
+      ],
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[3, 3],\n",
+              "       [7, 1],\n",
+              "       [1, 5],\n",
+              "       [0, 3],\n",
+              "       [4, 4],\n",
+              "       [8, 7],\n",
+              "       [9, 0]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 11
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "zaAZ_41Z7jcg",
+        "outputId": "95c6e775-72e3-4ddc-9c2a-da907ea75ece",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "\n",
+        "# Create a random array of floats between 0 & 1 of shape (3, 5)\n",
+        "np.random.rand(3,5)"
+      ],
+      "execution_count": 12,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[0.95343362, 0.88006814, 0.87251385, 0.51944911, 0.52706897],\n",
+              "       [0.65675849, 0.48134685, 0.84585032, 0.51286574, 0.13191794],\n",
+              "       [0.02724043, 0.70852285, 0.71349669, 0.05791756, 0.54557409]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 12
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "sXDdwbib8GTa",
+        "outputId": "3ab0652a-1ca5-4488-de0a-f25d637105d0",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 546
+        }
+      },
+      "source": [
+        "# Create an array of normally distributed random numbers\n",
+        "\n",
+        "np.random.normal(size=(int(input()),int(input())))"
+      ],
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "KeyboardInterrupt",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m/usr/local/lib/python3.6/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36m_input_request\u001b[0;34m(self, prompt, ident, parent, password)\u001b[0m\n\u001b[1;32m    728\u001b[0m             \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 729\u001b[0;31m                 \u001b[0mident\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mreply\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0msession\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mrecv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mstdin_socket\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0;36m0\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    730\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mException\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.6/dist-packages/jupyter_client/session.py\u001b[0m in \u001b[0;36mrecv\u001b[0;34m(self, socket, mode, content, copy)\u001b[0m\n\u001b[1;32m    802\u001b[0m         \u001b[0;32mtry\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 803\u001b[0;31m             \u001b[0mmsg_list\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0msocket\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mrecv_multipart\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mmode\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mcopy\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mcopy\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    804\u001b[0m         \u001b[0;32mexcept\u001b[0m \u001b[0mzmq\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mZMQError\u001b[0m \u001b[0;32mas\u001b[0m \u001b[0me\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.6/dist-packages/zmq/sugar/socket.py\u001b[0m in \u001b[0;36mrecv_multipart\u001b[0;34m(self, flags, copy, track)\u001b[0m\n\u001b[1;32m    490\u001b[0m         \"\"\"\n\u001b[0;32m--> 491\u001b[0;31m         \u001b[0mparts\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m[\u001b[0m\u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mrecv\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mflags\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mcopy\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mcopy\u001b[0m\u001b[0;34m,\u001b[0m \u001b[0mtrack\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0mtrack\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    492\u001b[0m         \u001b[0;31m# have first part already, only loop while more to receive\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32mzmq/backend/cython/socket.pyx\u001b[0m in \u001b[0;36mzmq.backend.cython.socket.Socket.recv\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;32mzmq/backend/cython/socket.pyx\u001b[0m in \u001b[0;36mzmq.backend.cython.socket.Socket.recv\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;32mzmq/backend/cython/socket.pyx\u001b[0m in \u001b[0;36mzmq.backend.cython.socket._recv_copy\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.6/dist-packages/zmq/backend/cython/checkrc.pxd\u001b[0m in \u001b[0;36mzmq.backend.cython.checkrc._check_rc\u001b[0;34m()\u001b[0m\n",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m: ",
+            "\nDuring handling of the above exception, another exception occurred:\n",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-15-0f2fe174d697>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# Create an array of normally distributed random numbers\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0mnp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mrandom\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mnormal\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0msize\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0mint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0minput\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m/usr/local/lib/python3.6/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36mraw_input\u001b[0;34m(self, prompt)\u001b[0m\n\u001b[1;32m    702\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parent_ident\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    703\u001b[0m             \u001b[0mself\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0m_parent_header\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 704\u001b[0;31m             \u001b[0mpassword\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;32mFalse\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    705\u001b[0m         )\n\u001b[1;32m    706\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;32m/usr/local/lib/python3.6/dist-packages/ipykernel/kernelbase.py\u001b[0m in \u001b[0;36m_input_request\u001b[0;34m(self, prompt, ident, parent, password)\u001b[0m\n\u001b[1;32m    732\u001b[0m             \u001b[0;32mexcept\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    733\u001b[0m                 \u001b[0;31m# re-raise KeyboardInterrupt, to truncate traceback\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m--> 734\u001b[0;31m                 \u001b[0;32mraise\u001b[0m \u001b[0mKeyboardInterrupt\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m    735\u001b[0m             \u001b[0;32melse\u001b[0m\u001b[0;34m:\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m    736\u001b[0m                 \u001b[0;32mbreak\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mKeyboardInterrupt\u001b[0m: "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Wxwu1eLd8I1J",
+        "outputId": "b46e5fb2-e01d-444b-adeb-245d2c668222",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 85
+        }
+      },
+      "source": [
+        "\n",
+        "# Set the random seed to 42\n",
+        "import random\n",
+        "random.seed(45)\n",
+        "\n",
+        "# Create a random array of numbers between 0 & 10 of size (4, 6)\n",
+        "np.random.randint(10,size=(4,6))"
+      ],
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[2, 0, 0, 6, 1, 9],\n",
+              "       [1, 3, 8, 3, 5, 8],\n",
+              "       [2, 2, 9, 3, 2, 4],\n",
+              "       [9, 3, 1, 0, 9, 4]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 16
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "NzJRUr-x8Xp4",
+        "outputId": "936e82f6-e31f-47c9-e0b8-5ada62437161",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 85
+        }
+      },
+      "source": [
+        "# Copy the code from the cell above and run it again\n",
+        "import random\n",
+        "random.seed(45)\n",
+        "\n",
+        "\n",
+        "p=np.random.randint(10,size=(4,6))\n",
+        "p"
+      ],
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[5, 5, 2, 2, 0, 2],\n",
+              "       [0, 6, 8, 7, 3, 3],\n",
+              "       [5, 5, 7, 6, 0, 3],\n",
+              "       [6, 6, 8, 6, 8, 8]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 17
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "VK-vtSWX8ZhM",
+        "outputId": "5684f78b-669b-4b5c-8f8a-9c4f20c8195b",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "# Find the 0'th index of the latest array you created\n",
+        "p[0][0]"
+      ],
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "5"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 18
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "AemkwlFS8dJX",
+        "outputId": "5fb571d0-c355-4993-e981-2e7269810cfe",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        }
+      },
+      "source": [
+        "# Get the first 2 rows of latest array you created\n",
+        "p[2:]"
+      ],
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[5, 5, 7, 6, 0, 3],\n",
+              "       [6, 6, 8, 6, 8, 8]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 19
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "rTrihGVj8ihZ",
+        "outputId": "84049d63-82f2-4968-f3f6-b223376306a0",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 51
+        }
+      },
+      "source": [
+        "# Get the first 2 values of the first 2 rows of the latest array\n",
+        "p[:2,:2]"
+      ],
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[5, 5],\n",
+              "       [0, 6]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 20
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2SLd5lul8kIJ"
+      },
+      "source": [
+        "# Create a random array of numbers between 0 & 10 and an array of ones both of size (3, 5), save them both to variables\n",
+        "r1,r2=np.random.randint(10, size=(3,5)),np.ones( [3,5])"
+      ],
+      "execution_count": 22,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "iXrEqbtB8q_1",
+        "outputId": "57ca124b-6a6d-41ae-bdf8-070711ad16e7",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "# Add the two arrays together\n",
+        "r1+r2"
+      ],
+      "execution_count": 23,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[ 1.,  4.,  9.,  7.,  2.],\n",
+              "       [ 3.,  4.,  5.,  6.,  5.],\n",
+              "       [ 2.,  1.,  7.,  7., 10.]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 23
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "KqJcYQZW8uSb",
+        "outputId": "3294377a-0b10-4fa2-e4c8-8f21f541ab46",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 102
+        }
+      },
+      "source": [
+        "# Create another array of ones of shape (5, 3)\n",
+        "r3=np.ones( [5,3])\n",
+        "r3"
+      ],
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[1., 1., 1.],\n",
+              "       [1., 1., 1.],\n",
+              "       [1., 1., 1.],\n",
+              "       [1., 1., 1.],\n",
+              "       [1., 1., 1.]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 24
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "SxHKRv7k8yIF",
+        "outputId": "84891e14-5c93-4faf-889d-9d540871e47f",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 197
+        }
+      },
+      "source": [
+        "\n",
+        "# Try add the array of ones and the other most recent array together # You can anticipate an error\n",
+        "r3+r1+r2"
+      ],
+      "execution_count": 25,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "ValueError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-25-ba37bd1bda61>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;31m# Try add the array of ones and the other most recent array together # You can anticipate an error\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0mr3\u001b[0m\u001b[0;34m+\u001b[0m\u001b[0mr1\u001b[0m\u001b[0;34m+\u001b[0m\u001b[0mr2\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;31mValueError\u001b[0m: operands could not be broadcast together with shapes (5,3) (3,5) "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "NRQk_WCn88xL",
+        "outputId": "a8feb1aa-8bc6-41b9-aa9a-55c242f9e982",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "\n",
+        "# Do the same operation you just did but this time with a transpose on one array\n",
+        "rn=r3.transpose()\n",
+        "rr=rn+r1+r2\n",
+        "rr"
+      ],
+      "execution_count": 26,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[ 2.,  5., 10.,  8.,  3.],\n",
+              "       [ 4.,  5.,  6.,  7.,  6.],\n",
+              "       [ 3.,  2.,  8.,  8., 11.]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 26
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Lt7j78Hw8-a5",
+        "outputId": "2d8aa8fe-4d63-47aa-9a27-3b0c7d943553",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "# Take the latest array to the power of 2 using the python way\n",
+        "rr**2"
+      ],
+      "execution_count": 27,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[  4.,  25., 100.,  64.,   9.],\n",
+              "       [ 16.,  25.,  36.,  49.,  36.],\n",
+              "       [  9.,   4.,  64.,  64., 121.]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 27
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "x2s4tfUE9CYh",
+        "outputId": "895e8c75-dd4c-4630-8e86-12cd26a63fd8",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "# Do the same thing with numpy way\n",
+        "np.square(rr)"
+      ],
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[  4.,  25., 100.,  64.,   9.],\n",
+              "       [ 16.,  25.,  36.,  49.,  36.],\n",
+              "       [  9.,   4.,  64.,  64., 121.]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 28
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "fBpumdMf9H_x",
+        "outputId": "859860e0-5294-4319-8344-71b9f6a991a3",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "# Find the mean, min, max, standard deviation, variance of the latest array using np.mean()\n",
+        "print(\"mean =\",np.mean(rr),\"     \",\"min = \",np.min(rr),\"    \",\"max = \",np.max(rr),\"    \",\"standard deviation = \", np.sqrt(np.mean((rr - np.mean(rr)) ** 2 )),\"     \",\"variance = \",np.mean((rr - np.mean(rr)) ** 2 ))"
+      ],
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "mean = 5.866666666666666       min =  2.0      max =  11.0      standard deviation =  2.704728370013439       variance =  7.315555555555554\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "-on6WYf79Ofs"
+      },
+      "source": [
+        "# Create two arrays of random integers between 0 to 10 one of size (3, 3) the other of size (3, 2)\n",
+        "ar1,ar2=np.random.randint(10, size=(3,3)),np.random.randint(10, size=(3,2))"
+      ],
+      "execution_count": 31,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "2olgc-bo9VAg",
+        "outputId": "3945a218-4cad-48cd-cc95-1c35818aba3a",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "# Perform a dot product on the two newest arrays you created\n",
+        "\n",
+        "ar1.dot(ar2)\n"
+      ],
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[ 64,  73],\n",
+              "       [112, 112],\n",
+              "       [104, 109]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 32
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "muvd-3yC9fiB"
+      },
+      "source": [
+        "# Create two arrays of random integers between 0 to 10 both of size (4, 3)\n",
+        "arr1 ,arr2=np.random.randint(10, size=(4,3)),np.random.randint(10, size=(4,3))"
+      ],
+      "execution_count": 33,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "Sum76Pqf9rsD",
+        "outputId": "528fb3d0-a34d-4bfd-c581-0e060942af1d",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 85
+        }
+      },
+      "source": [
+        "# Perform a hadamard product on the two newest arrays you created\n",
+        "np.multiply( arr1,arr2)"
+      ],
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[32, 25,  4],\n",
+              "       [15, 45,  5],\n",
+              "       [14, 56,  0],\n",
+              "       [12, 12,  9]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 34
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "RZkT9WG39wQQ",
+        "outputId": "698848be-341e-40b2-fdda-a2b5d4089ee4",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 214
+        }
+      },
+      "source": [
+        "# Perform a dot product on the two newest arrays you created # Error anticipated\n",
+        "np.dot(arr1,arr2)"
+      ],
+      "execution_count": 35,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "ValueError",
+          "evalue": "ignored",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mValueError\u001b[0m                                Traceback (most recent call last)",
+            "\u001b[0;32m<ipython-input-35-a31543674d11>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# Perform a dot product on the two newest arrays you created # Error anticipated\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mnp\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mdot\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0marr1\u001b[0m\u001b[0;34m,\u001b[0m\u001b[0marr2\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+            "\u001b[0;32m<__array_function__ internals>\u001b[0m in \u001b[0;36mdot\u001b[0;34m(*args, **kwargs)\u001b[0m\n",
+            "\u001b[0;31mValueError\u001b[0m: shapes (4,3) and (4,3) not aligned: 3 (dim 1) != 4 (dim 0)"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "3qqTqrAS92JS",
+        "outputId": "b29c2f4b-13bc-4e6f-aa48-4030fdef5a1c",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 85
+        }
+      },
+      "source": [
+        "# Take the latest two arrays, perform a transpose on one of them and then perform a dot product on them both\n",
+        "np.dot(arr1,arr2.T)"
+      ],
+      "execution_count": 36,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[61, 41, 48, 26],\n",
+              "       [90, 65, 82, 38],\n",
+              "       [97, 62, 70, 41],\n",
+              "       [71, 51, 56, 33]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 36
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "VOADoIAE96zE"
+      },
+      "source": [
+        "\n",
+        "# Create two arrays of random integers between 0 & 10 of the same shape and save them to variables\n",
+        "A,B=np.random.randint(10, size=(3,4)),np.random.randint(10, size=(3,4))"
+      ],
+      "execution_count": 38,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "VPdSSPjj-BI1",
+        "outputId": "0e755f06-a44a-4571-cdec-052637e76e19",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 170
+        }
+      },
+      "source": [
+        "# Compare the two arrays with '>', '<=' and '==' \n",
+        "print(A>B)\n",
+        "print(A<=B)\n",
+        "print(A==B)"
+      ],
+      "execution_count": 39,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "text": [
+            "[[ True False False False]\n",
+            " [False False False False]\n",
+            " [False False  True  True]]\n",
+            "[[False  True  True  True]\n",
+            " [ True  True  True  True]\n",
+            " [ True  True False False]]\n",
+            "[[False  True False  True]\n",
+            " [False False False False]\n",
+            " [False False False False]]\n"
+          ],
+          "name": "stdout"
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "O2nKH81B-HOs",
+        "outputId": "19403684-3fe7-46d2-a06f-f88608267392",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "# Sort one of the arrays you just created in ascending order\n",
+        "np.sort(A)\n"
+      ],
+      "execution_count": 40,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[3, 5, 8, 9],\n",
+              "       [2, 2, 3, 5],\n",
+              "       [1, 2, 4, 7]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 40
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "xkI6pYCP-WER",
+        "outputId": "bfaf6d92-5af4-4966-dbab-ef1c718b11e2",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 68
+        }
+      },
+      "source": [
+        "# Sort the indexes of one of the arrays you just created\n",
+        "np.argsort(B)"
+      ],
+      "execution_count": 41,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[0, 1, 2, 3],\n",
+              "       [2, 0, 1, 3],\n",
+              "       [2, 3, 1, 0]])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 41
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "yXA0MKSK-bnU",
+        "outputId": "55e6db0b-82f2-4cc5-b803-485374d867ca",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "\n",
+        "# Find the index with the maximum value in one of the arrays you've created\n",
+        "\n",
+        "\n",
+        "np.where(A == np.max(A))"
+      ],
+      "execution_count": 42,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(array([0]), array([3]))"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 42
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "GBGeHses-8aJ",
+        "outputId": "61770a34-3dec-4306-8676-dae8d25a895e",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 119
+        }
+      },
+      "source": [
+        "\n",
+        "# Create an array with 10 evenly spaced numbers between 1 and 100\n",
+        "np.arange(100)"
+      ],
+      "execution_count": 44,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,\n",
+              "       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,\n",
+              "       34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,\n",
+              "       51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67,\n",
+              "       68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84,\n",
+              "       85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 44
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "0A-okocF--YR",
+        "outputId": "93d84833-f951-40f7-a90d-62683d70fd83",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "#Find the indexes with the maximum values down the verticial axis of one of the arrays you created\n",
+        "#p=np.array([[1,2,3],[4,3,1]])\n",
+        "np.argmax(A,axis=1)"
+      ],
+      "execution_count": 45,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([3, 3, 3])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 45
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "STa_vvan_NGG",
+        "outputId": "8f8fea51-fb8e-40e5-c1f6-ba330b0e51bf",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 34
+        }
+      },
+      "source": [
+        "# Find the indexes with the minimum values across the horizontal axis of one of the arrays you created\n",
+        "np.argmax(A,axis=0)"
+      ],
+      "execution_count": 46,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([0, 0, 0, 0])"
+            ]
+          },
+          "metadata": {
+            "tags": []
+          },
+          "execution_count": 46
+        }
+      ]
+    }
+  ]
+}
